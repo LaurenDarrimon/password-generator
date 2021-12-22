@@ -49,12 +49,26 @@ function generatePassword(){
 
   console.log(length);
 
+  // prompt user if they'd like uppercase, if yes add uppercase array to all possible characters array
+  let upperCaseYN = confirm("Would you like to have uppercase characters in your password?");
+  if (upperCaseYN) {
+    allPossibleCharacters = characters.upperCase;
+  }
+  console.log(allPossibleCharacters);
 
-  // prompt user if they's like uppercase, if yes add uppercase array to all possible characters array
+  //prompt user if they'd like lowercase, if yes add lowercase array to all possible characters array
+  let lowerCaseYN = confirm("Would you like to have lowercase characters in your password?");
+  if (lowerCaseYN) {
+    allPossibleCharacters = allPossibleCharacters.concat(characters.lowerCase);
+  }
+  console.log(allPossibleCharacters);
 
-  //prompt user if they's like lowercase, if yes add lowercase array to all possible characters array
-
-  //prompt user if they's like numerals, if yes add numerals array to all possible characters array
+  //prompt user if they'd like numerals, if yes add numerals array to all possible characters array
+  let numeralsYN = confirm("Would you like to have numerals in your password?");
+  if (numeralsYN) {
+    allPossibleCharacters = allPossibleCharacters.concat(characters.numerals);
+  }
+  console.log(allPossibleCharacters);
 
   //prompt user if they'd like special characters, if yes add to all possible characters array
 
