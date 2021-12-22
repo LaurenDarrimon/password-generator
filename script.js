@@ -75,6 +75,17 @@ function generatePassword(){
   //write a loop that iterates for up to the length of the password and generates a random number, 
   //between 0 and the length of the all possible characters array. Look in the all possible characters 
   //array at that random number position, and add that character to the password. 
+  for (let i=0; i < length; i++) {
+    //math.random is a random number between 0 and 1, multipled by the length of our array (minus 1,
+    //since the last position in the array is one less than the length)
+    //will get us some number less than the length of the array. Floor will round down to a whole number. 
+    let randomIndex  = Math.floor(Math.random() * (allPossibleCharacters.length - 1));
+    
+    //returns array of random characters 
+    console.log(allPossibleCharacters[randomIndex]);
+
+
+  }
 
 
 
