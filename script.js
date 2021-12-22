@@ -91,9 +91,15 @@ function generatePassword(){
     //add each random character to array for password. 
     passwordArray.push(allPossibleCharacters[randomIndex]);
 
-    console.log(passwordArray);
-
   }
+
+  console.log(passwordArray);
+
+  //change password to be a string of all the values in the array joined together, passed an empty string
+  //as argument so that there would be no separation. 
+  password = passwordArray.join('');
+
+  console.log(password);
 
 
 }
