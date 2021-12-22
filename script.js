@@ -95,12 +95,17 @@ function generatePassword(){
 
   console.log(passwordArray);
 
-  //change password to be a string of all the values in the array joined together, passed an empty string
-  //as argument so that there would be no separation. 
+  //change password to be a string of all the values in the password array joined together, passed an empty string
+  //as argument to join method so that there would be no separator characters. 
   password = passwordArray.join('');
 
+  
   console.log(password);
+  alert("Your new password is:   " +  password);
 
-
+  //return the value of passward out of this generate passward function so that 
+  //the write password function (way back up on line 28) can recieve it and write it! 
+  return password;
 }
+
 
