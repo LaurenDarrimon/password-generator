@@ -16,8 +16,11 @@ console.log(characters.lowerCase.length);
 //declare an empty array that we will start to fill up with possible characters according to user prompts. 
 let allPossibleCharacters = [];
 
+//empty array for characters that will become password
+let passwordArray = [];
+
 //this declares a variable that will reference the id tag
-//"generate, which in this case is the button"
+//"generate", which in this case is the button
 var generateBtn = document.querySelector("#generate");
 
 
@@ -38,7 +41,7 @@ generateBtn.addEventListener("click", writePassword);
 //declare the function that will generate the password
 function generatePassword(){
 
-  //first, get the number of characters we need to generate
+  //first, get the number of characters we need to generate from the user
   let length = prompt('How many characters would you like in your password? (8-128 characters)', "12");
   console.log(length);
 
@@ -49,7 +52,7 @@ function generatePassword(){
 
   console.log(length);
 
-  // prompt user if they'd like uppercase, if yes add uppercase array to all possible characters array
+  // prompt user if they'd like uppercase, if yes, add uppercase array to all possible characters array
   let upperCaseYN = confirm("Would you like to have uppercase characters in your password?");
   if (upperCaseYN) {
     allPossibleCharacters = characters.upperCase;
@@ -75,21 +78,22 @@ function generatePassword(){
   //write a loop that iterates for up to the length of the password and generates a random number, 
   //between 0 and the length of the all possible characters array. Look in the all possible characters 
   //array at that random number position, and add that character to the password. 
+
   for (let i=0; i < length; i++) {
     //math.random is a random number between 0 and 1, multipled by the length of our array (minus 1,
     //since the last position in the array is one less than the length)
     //will get us some number less than the length of the array. Floor will round down to a whole number. 
     let randomIndex  = Math.floor(Math.random() * (allPossibleCharacters.length - 1));
     
-    //returns array of random characters 
+  
     console.log(allPossibleCharacters[randomIndex]);
 
+    //add each random character to array for password. 
+    passwordArray.push(allPossibleCharacters[randomIndex]);
+
+    console.log(passwordArray);
 
   }
-
-
-
-
 
 
 }
