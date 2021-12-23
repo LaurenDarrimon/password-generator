@@ -15,7 +15,6 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-
 let passwordGenerationObject = {
 
     //object containing arrays of possible characters 

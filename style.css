@@ -14,7 +14,10 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-image: url(vintage-computer-green.jpg);
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 .wrapper {
@@ -27,7 +30,7 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(204, 42%, 95%);
 }
 
 .card {
@@ -74,9 +77,9 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(44, 110, 141);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+  box-shadow: rgba(8, 114, 146, 0.342) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
@@ -116,6 +119,16 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+}
+
+footer {
+  color:#e7e9eb; 
+  padding: 25px;
+  text-align: center;
+}
+
+footer a {
+  color:#c999f5; 
 }
 
 @media (max-width: 690px) {
