@@ -49,7 +49,7 @@ let passwordGenerationObject = {
     getLength: function() {
         this.length = prompt('How many characters would you like in your password? (8-128 characters)', "12");
         //if it's too long or two short, reprompt user
-         if (this.length < 8 || this.length > 128) {
+         while (this.length < 8 || this.length > 128) {
             this.length = prompt("Your password doesn't meet length requirements, please try again (8-128 characters)", "12");
         }
         return this.length;
@@ -75,6 +75,10 @@ let passwordGenerationObject = {
         let specialsYN = confirm("Would you like to have special characters in your password?");
         if (specialsYN) {
           this.allPossibleCharacters = this.allPossibleCharacters.concat(this.characters.specials);
+        }
+
+        if (this.allPossibleCharacters.length === 0){
+          alert("You have not selected any characters. Please start over." );
         }
     
         return this.allPossibleCharacters;

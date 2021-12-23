@@ -32,6 +32,12 @@ This site will generate a random password, customized for you! Choose your ideal
 ### Javascript
 Javascript is used to prompt the user for the ideal length of the password and for the user to confirm which character types are to be included in the the final password. From those inputs, an array of all possible characters is formed. Random number generation selected characters by index from that array. The characters selected by the random index are then joined into one password. That password is written to a window alert and to the text box on the screen. 
 
+<br><br>
+
+![A succesfully generated password!](./assets/password-generator.jpg)
+
+<br><br>
+
 ### Object-Oriented Javascript
 Early versions of this password generator utilized one long password generation function. In subsequent code refactorings, the password generation was broken up into smaller modular functions: 
 
@@ -45,8 +51,42 @@ In another refactor, the entire process of generating a password was transitione
 <br>
 <br>
 
-![Responsive Portfolio](assets/images/responsive-portfolio.gif)
+## Code
 
+### Nested Object Methods:
+The process of generating a password is built from linking together various other methods contained within the same self-referencing object, using the keyword "this." 
+
+
+```
+let passwordGenerationObject = {
+    ...
+    generatePassword: function() {
+        length = this.getLength();
+        allPossibleCharacters = this.promptUser();
+        passwordArray = this.makePasswordArray();
+        password = this.joinPassword();
+        return this.password;
+    },
+    ...
+}
+```
+
+
+### Randomly Generated Characters:
+
+This object method is a loop that iterates once for each character in the password. For each character needed, it generates a random number between 0 and the number of all possible characters. From that array of possibilities, it draws a character at the indexed position of the random number, and adds that chosen character to the password array. 
+
+```
+    ...
+    makePasswordArray: function() { 
+        for (let i=0; i < this.length; i++) {
+            let randomIndex  = Math.floor(Math.random() * (this.allPossibleCharacters.length));
+            this.passwordArray.push(this.allPossibleCharacters[randomIndex]);
+        }
+    return this.passwordArray;
+    },
+    ...
+```
 
 
 ## Author
