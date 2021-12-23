@@ -23,7 +23,7 @@ let passwordGenerationObject = {
         lowerCase:["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
         upperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
         numerals: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        //ADD in special characters here later
+        specials: ["\#", "\@", "\!", "\$", "\%", "\^", "\*", "\(", "\)", "\+", "\=", "\~)","\?", "\[", "\]","\{", "\}", "\|"],
     },
     //empty array that we will start to fill up with possible characters according to user prompts. 
     allPossibleCharacters : [],
@@ -71,6 +71,11 @@ let passwordGenerationObject = {
         let numeralsYN = confirm("Would you like to have numerals in your password?");
         if (numeralsYN) {
           this.allPossibleCharacters = this.allPossibleCharacters.concat(this.characters.numerals);
+        }
+
+        let specialsYN = confirm("Would you like to have special characters in your password?");
+        if (specialsYN) {
+          this.allPossibleCharacters = this.allPossibleCharacters.concat(this.characters.specials);
         }
     
         return this.allPossibleCharacters;
